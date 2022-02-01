@@ -9,7 +9,6 @@ public class Food : MonoBehaviour
         {
             return;
         }
-
         head.Eat(this);
     }
 }
