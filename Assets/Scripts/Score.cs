@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int PlayerScore { get; private set; } = 0;
+
+    public void AddScore()
     {
-        
+        PlayerScore++;
+        Debug.Log(PlayerScore);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetScore()
     {
-        
+        PlayerScore = 0;
     }
 }
