@@ -96,14 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3586671347775785832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a634cd2ea597a40a23e7aa9e1eef95, type: 3}
+  m_Script: {fileID: 11500000, guid: 34cca626c14e20445a46382dd26e0ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyPrefab: {fileID: 224996543707819740, guid: c120ebbde00e9ad44b5cbcaa2d22238b, type: 3}
-  avokado: {fileID: -8606451631889854478, guid: be93bb228c97c1e4a9ad1df1415c766e, type: 3}
-  avokado2: {fileID: -850196717505471947, guid: c1fea5877666e7c4d992505684e51cf5, type: 3}
-  sushi: {fileID: 6837289331861645608, guid: 6f01abf640efdc645bd1156ebe90725e, type: 3}
-  sushi2: {fileID: 1197393437413869761, guid: c2006146987a63045aad582cdbd5ef30, type: 3}
+  bodyPrefab: {fileID: -8949695740907174742, guid: c120ebbde00e9ad44b5cbcaa2d22238b, type: 3}
 --- !u!50 &6504121157750968001
 Rigidbody2D:
   serializedVersion: 4
@@ -135,7 +131,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
