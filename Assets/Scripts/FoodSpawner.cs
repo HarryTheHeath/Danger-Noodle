@@ -25,18 +25,7 @@ public class FoodSpawner : MonoBehaviour
 
         if (random == lastRandom)
         {
-            random = (lastRandom + 2);
-            if (random > 3)
-            {
-                if (random == 4)
-                {
-                    random = 0;
-                }
-                else
-                {
-                    random = 1;
-                }
-            }
+            NoRepeats(ref random);
         }
         switch (random)
         {
@@ -62,5 +51,22 @@ public class FoodSpawner : MonoBehaviour
                 break;
         }
         Instantiate(foodPrefab, GetFoodSpawnPosition(), Quaternion.identity);
+    }
+
+    public void NoRepeats(ref int random)
+    {
+        random = (lastRandom + 2);
+        if (random > 3)
+        {
+            if (random == 4)
+            {
+                random = 0;
+            }
+            else
+            {
+                random = 1;
+            }
+        }
+        Debug.Log($"Random changed from {lastRandom} to {random}");
     }
 }
