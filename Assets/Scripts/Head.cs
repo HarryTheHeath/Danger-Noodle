@@ -1,17 +1,19 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using Random = UnityEngine.Random;
-
 public class Head : Body
 {
     private MoveDirection moveDirection;
     private FoodSpawner foodSpawner;
     public Body bodyPrefab;
+    private Score score;
+    private GameOver gameOver;
 
     private void Awake()
     {
         foodSpawner = GameObject.Find("Food Spawner").GetComponent<FoodSpawner>();
+        score = GameObject.Find("Game Manager").GetComponent<Score>();
+        gameOver = GameObject.Find("Game Manager").GetComponent<GameOver>();
     }
 
     public enum MoveDirection
@@ -59,7 +61,19 @@ public class Head : Body
             canTurn = true;
         }
     }
-    
+
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        var snakeBody = col.GetComponent<Body>();
+        if (snakeBody == null)
+        {
+            return;
+        }
+        Debug.Log("Ow, I ate myself...");
+        //gameOver.TriggerReset(); uncomment when body spawns behind head
+    }
+
 
     void Update()
     {
@@ -83,5 +97,6 @@ public class Head : Body
         Destroy(food.gameObject);
         foodSpawner.SpawnFood();
         Grow(bodyPrefab);
+        score.AddScore();
     }
 }
