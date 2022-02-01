@@ -12,6 +12,8 @@ public class Head : Body
     public Food avokado2;
     public Food sushi;
     public Food sushi2;
+    private int size = 1;
+    
 
     public enum MoveDirection
     {
@@ -70,7 +72,7 @@ public class Head : Body
     private void SpawnFood()
     {
         var random = Random.Range(0, 3);
-        Debug.Log($"New random spawn: {random}");
+        // Debug.Log($"New random spawn: {random}");
 
         if (random == 0)
         {
@@ -119,7 +121,9 @@ public class Head : Body
     {
         Destroy(food.gameObject);
         SpawnFood();
-        
         Grow(this.bodyPrefab);
+        
+        size++;
+        Debug.Log($"Size: {size}");
     }
 }
