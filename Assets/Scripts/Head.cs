@@ -6,13 +6,13 @@ using Random = UnityEngine.Random;
 public class Head : Body
 {
     private MoveDirection moveDirection;
+    private FoodSpawner foodSpawner;
     public Body bodyPrefab;
-    private Food foodPrefab;
-    public Food avokado;
-    public Food avokado2;
-    public Food sushi;
-    public Food sushi2;
-    private int lastRandom;
+
+    private void Awake()
+    {
+        foodSpawner = GameObject.Find("Food Spawner").GetComponent<FoodSpawner>();
+    }
 
     public enum MoveDirection
     {
@@ -51,7 +51,7 @@ public class Head : Body
     IEnumerator Start()
     {
         transform.position = Vector3.zero;
-        SpawnFood();
+        foodSpawner.SpawnFood();
         while (true)
         {
             yield return new WaitForSeconds(0.3f);
@@ -60,58 +60,6 @@ public class Head : Body
         }
     }
     
-    Vector3 GetFoodSpawnPosition()
-    {
-        return new Vector3(
-            Random.Range(-3, 4),
-            Random.Range(-3, 4)
-        );
-    }
-
-    private void SpawnFood()
-    {
-        var random = Random.Range(0, 3);
-
-        if (random == lastRandom)
-        {
-            random = (lastRandom + 2);
-            if (random > 3)
-            {
-                if (random == 4)
-                {
-                    random = 0;
-                }
-                else
-                {
-                    random = 1;
-                }
-            }
-        }
-        switch (random)
-        {
-            case 0:
-                foodPrefab = avokado;
-                Debug.Log("Spawn Avocado");
-                lastRandom = 0;
-                break;
-            case 1:
-                foodPrefab = avokado2;
-                Debug.Log("Spawn Happy Avocado");
-                lastRandom = 1;
-                break;
-            case 2:
-                foodPrefab = sushi;
-                Debug.Log("Spawn Salmon Sushi");
-                lastRandom = 2;
-                break;
-            case 3:
-                foodPrefab = sushi2;
-                Debug.Log("Spawn Avocado Sushi");
-                lastRandom = 3;
-                break;
-        }
-        Instantiate(foodPrefab, GetFoodSpawnPosition(), Quaternion.identity);
-    }
 
     void Update()
     {
@@ -133,8 +81,7 @@ public class Head : Body
     public void Eat(Food food)
     {
         Destroy(food.gameObject);
-        SpawnFood();
-        
+        foodSpawner.SpawnFood();
         Grow(bodyPrefab);
     }
 }
