@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3655111873769892310}
   - component: {fileID: 1729178579}
   - component: {fileID: 6504121157750968001}
-  - component: {fileID: 793914852934463034}
+  - component: {fileID: 2545992272388529461}
   m_Layer: 0
   m_Name: Shnek face
   m_TagString: Untagged
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &793914852934463034
+--- !u!58 &2545992272388529461
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,4 +140,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2.3

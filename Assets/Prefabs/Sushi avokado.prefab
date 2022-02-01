@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2843133543772664934}
   - component: {fileID: 1718407917661276014}
-  - component: {fileID: 1197393437413869761}
-  - component: {fileID: 9182834651384010690}
+  - component: {fileID: 4217785784537234225}
+  - component: {fileID: 1251806541643795618}
   m_Layer: 0
   m_Name: Sushi avokado
   m_TagString: Untagged
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1197393437413869761
+--- !u!114 &4217785784537234225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,10 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3817886152997657989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ce3cd4498702647ad0b6ec0a09cbd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ad017a7ac771147b61c9f973d1eccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &9182834651384010690
+--- !u!58 &1251806541643795618
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,4 +113,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2.3

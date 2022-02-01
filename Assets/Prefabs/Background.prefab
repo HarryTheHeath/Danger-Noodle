@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301886464087295}
   - component: {fileID: 1978301886464087294}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301886557819349}
   - component: {fileID: 1978301886557819348}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301887204119087}
   - component: {fileID: 1978301887204119086}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301887352258555}
   - component: {fileID: 1978301887352258554}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301887421836423}
   - component: {fileID: 1978301887421836422}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301887499970560}
   - component: {fileID: 1978301887499970563}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301888091848959}
   - component: {fileID: 1978301888091848958}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978301888298914455}
   - component: {fileID: 1978301888298914454}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pattern (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
