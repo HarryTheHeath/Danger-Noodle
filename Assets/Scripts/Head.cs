@@ -12,6 +12,7 @@ public class Head : Body
     public Food avokado2;
     public Food sushi;
     public Food sushi2;
+    private int lastRandom;
 
     public enum MoveDirection
     {
@@ -70,29 +71,44 @@ public class Head : Body
     private void SpawnFood()
     {
         var random = Random.Range(0, 3);
-        // Debug.Log($"New random spawn: {random}");
 
-        if (random == 0)
+        if (random == lastRandom)
         {
-            foodPrefab = avokado;
-            Debug.Log("Spawn Avocado");
+            random = (lastRandom + 2);
+            if (random > 3)
+            {
+                if (random == 4)
+                {
+                    random = 0;
+                }
+                else
+                {
+                    random = 1;
+                }
+            }
         }
-
-        else if (random == 1)
+        switch (random)
         {
-            foodPrefab = avokado2;
-            Debug.Log("Spawn Happy Avocado");
-        }
-
-        else if (random == 2)
-        {
-            foodPrefab = sushi;
-            Debug.Log("Spawn Salmon Sushi");
-        }
-        else
-        {
-            foodPrefab = sushi2;
-            Debug.Log("Spawn Avocado Sushi");
+            case 0:
+                foodPrefab = avokado;
+                Debug.Log("Spawn Avocado");
+                lastRandom = 0;
+                break;
+            case 1:
+                foodPrefab = avokado2;
+                Debug.Log("Spawn Happy Avocado");
+                lastRandom = 1;
+                break;
+            case 2:
+                foodPrefab = sushi;
+                Debug.Log("Spawn Salmon Sushi");
+                lastRandom = 2;
+                break;
+            case 3:
+                foodPrefab = sushi2;
+                Debug.Log("Spawn Avocado Sushi");
+                lastRandom = 3;
+                break;
         }
         Instantiate(foodPrefab, GetFoodSpawnPosition(), Quaternion.identity);
     }
