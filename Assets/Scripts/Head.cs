@@ -7,13 +7,11 @@ public class Head : Body
 {
     private MoveDirection moveDirection;
     public Body bodyPrefab;
-    private Food food;
+    private Food foodPrefab;
     public Food avokado;
     public Food avokado2;
     public Food sushi;
     public Food sushi2;
-    private int size = 1;
-    
 
     public enum MoveDirection
     {
@@ -76,28 +74,27 @@ public class Head : Body
 
         if (random == 0)
         {
-             food = avokado;
-             Debug.Log("Spawn Avocado");
+            foodPrefab = avokado;
+            Debug.Log("Spawn Avocado");
         }
 
         else if (random == 1)
         {
-            food = avokado2;
+            foodPrefab = avokado2;
             Debug.Log("Spawn Happy Avocado");
         }
 
         else if (random == 2)
         {
-            food = sushi;
+            foodPrefab = sushi;
             Debug.Log("Spawn Salmon Sushi");
         }
         else
         {
-            food = sushi2;
+            foodPrefab = sushi2;
             Debug.Log("Spawn Avocado Sushi");
         }
-        
-        Instantiate(food.gameObject, GetFoodSpawnPosition(), Quaternion.identity);
+        Instantiate(foodPrefab, GetFoodSpawnPosition(), Quaternion.identity);
     }
 
     void Update()
@@ -121,9 +118,7 @@ public class Head : Body
     {
         Destroy(food.gameObject);
         SpawnFood();
-        Grow(this.bodyPrefab);
         
-        size++;
-        Debug.Log($"Size: {size}");
+        Grow(bodyPrefab);
     }
 }
