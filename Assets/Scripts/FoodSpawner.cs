@@ -31,22 +31,22 @@ public class FoodSpawner : MonoBehaviour
         {
             case 0:
                 foodPrefab = avokado;
-                Debug.Log("Spawn Avocado");
+                //Debug.Log("Spawn Avocado");
                 lastRandom = 0;
                 break;
             case 1:
                 foodPrefab = avokado2;
-                Debug.Log("Spawn Happy Avocado");
+                //Debug.Log("Spawn Happy Avocado");
                 lastRandom = 1;
                 break;
             case 2:
                 foodPrefab = sushi;
-                Debug.Log("Spawn Salmon Sushi");
+                //Debug.Log("Spawn Salmon Sushi");
                 lastRandom = 2;
                 break;
             case 3:
                 foodPrefab = sushi2;
-                Debug.Log("Spawn Avocado Sushi");
+                //Debug.Log("Spawn Avocado Sushi");
                 lastRandom = 3;
                 break;
         }
@@ -55,18 +55,15 @@ public class FoodSpawner : MonoBehaviour
 
     public void NoRepeats(ref int random)
     {
-        random = (lastRandom + 2);
-        if (random > 3)
+        while (random == lastRandom)
         {
-            if (random == 4)
+            var random2 = Random.Range(1, 4);
+            random = (4 - random2);
+            if (random != lastRandom)
             {
-                random = 0;
-            }
-            else
-            {
-                random = 1;
+                break;
             }
         }
-        Debug.Log($"Random changed from {lastRandom} to {random}");
+        //Debug.Log($"Random changed from {lastRandom} to {random}");
     }
 }
