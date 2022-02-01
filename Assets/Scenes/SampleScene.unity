@@ -262,22 +262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shnek face
       objectReference: {fileID: 0}
-    - target: {fileID: 3655111873769892310, guid: cdf402c26f92b5849aa575cd4be5133c, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655111873769892310, guid: cdf402c26f92b5849aa575cd4be5133c, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504121157750968001, guid: cdf402c26f92b5849aa575cd4be5133c, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504121157750968001, guid: cdf402c26f92b5849aa575cd4be5133c, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdf402c26f92b5849aa575cd4be5133c, type: 3}
 --- !u!1001 &1978301887612672666
