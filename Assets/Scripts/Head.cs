@@ -11,14 +11,19 @@ public class Head : Body
     private bool Alive;
     public Sprite alive;
     public Sprite dead;
+    public int StartSpeed = 3;
+    public int MinSpeed = 1;
+    public int MaxSpeed = 5;
+    private float ActualSpeed = 0.3f;
+
     private void Awake()
     {
         foodSpawner = GameObject.Find("Food Spawner").GetComponent<FoodSpawner>();
         score = GameObject.Find("Game Manager").GetComponent<Score>();
         gameOver = GameObject.Find("Game Manager").GetComponent<GameOver>();
-        Alive = true;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = alive;
-
+        
+        Alive = true;
     }
 
     public enum MoveDirection
@@ -61,7 +66,7 @@ public class Head : Body
         foodSpawner.SpawnFood();
         while (Alive)
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(ActualSpeed);
             MoveTo(transform.position + GetMovement(), GetRotation());
             canTurn = true;
         }
@@ -98,6 +103,27 @@ public class Head : Body
             moveDirection = (MoveDirection)(((int)moveDirection - 1 + (int)MoveDirection.Count) % (int)MoveDirection.Count);
             canTurn = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            SetSpeed();
+        }
+    }
+
+    private void SetSpeed()
+    {
+        if (StartSpeed != MinSpeed)
+        {
+            StartSpeed -= 1;
+            ActualSpeed -= 0.1f;
+        }
+        else
+        {
+            StartSpeed = MaxSpeed;
+            ActualSpeed = 0.5f;
+        }
+
+        Debug.Log($"Speed = {(StartSpeed)}");
     }
 
     public void Eat(Food food)
