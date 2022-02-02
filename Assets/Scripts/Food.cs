@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public bool freeSpot { get; private set; }
     private FoodSpawner foodSpawner;
-
+    
     private void Awake()
     {
         foodSpawner = GameObject.Find("Food Spawner").GetComponent<FoodSpawner>();
