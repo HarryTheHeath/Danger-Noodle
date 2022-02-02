@@ -9,7 +9,7 @@ public class FoodSpawner : MonoBehaviour
     public Food sushi2;
     private int lastRandom;
 
-    Vector3 GetFoodSpawnPosition()
+    public Vector3 GetFoodSpawnPosition()
     {
         return new Vector3(
             Random.Range(-3, 4),
