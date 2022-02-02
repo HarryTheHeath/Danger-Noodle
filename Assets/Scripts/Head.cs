@@ -70,10 +70,11 @@ public class Head : Body
         {
             return;
         }
-        Debug.Log("Ow, I ate myself...");
-        //gameOver.TriggerReset(); uncomment when body spawns behind head
-    }
 
+        Debug.Log("Ow, I ate myself...");
+        gameOver.TriggerReset();
+
+    }
 
     void Update()
     {
