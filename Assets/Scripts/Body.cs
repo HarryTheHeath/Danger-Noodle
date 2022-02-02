@@ -1,10 +1,15 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Body : MonoBehaviour
 {
     protected Body body;
+    private Transform curBodyPart;
+    private Transform PrevBodypart;
+
 
     public void Grow(Body body)
     {
@@ -14,7 +19,8 @@ public class Body : MonoBehaviour
         }
         else
         {
-            this.body = Instantiate(body, transform.position, transform.rotation);
+            this.body = Instantiate(body, new Vector3(transform.position.x -1, transform.position.y,
+                transform.position.z), transform.rotation);
         }
     }
 
