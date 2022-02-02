@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: fb9d8390b01b6154fb054bb0475e4632, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: a0b575880b2153b45ae787c00a582af7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPrefab: {fileID: -8949695740907174742, guid: c120ebbde00e9ad44b5cbcaa2d22238b, type: 3}
+  alive: {fileID: 21300000, guid: a0b575880b2153b45ae787c00a582af7, type: 3}
+  dead: {fileID: 21300000, guid: 77a9399601c12b249a33ba52cdd60a61, type: 3}
 --- !u!50 &6504121157750968001
 Rigidbody2D:
   serializedVersion: 4
