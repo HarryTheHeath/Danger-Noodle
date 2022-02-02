@@ -8,12 +8,17 @@ public class Head : Body
     public Body bodyPrefab;
     private Score score;
     private GameOver gameOver;
-
+    private bool Alive;
+    public Sprite alive;
+    public Sprite dead;
     private void Awake()
     {
         foodSpawner = GameObject.Find("Food Spawner").GetComponent<FoodSpawner>();
         score = GameObject.Find("Game Manager").GetComponent<Score>();
         gameOver = GameObject.Find("Game Manager").GetComponent<GameOver>();
+        Alive = true;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = alive;
+
     }
 
     public enum MoveDirection
@@ -54,7 +59,7 @@ public class Head : Body
     {
         transform.position = Vector3.zero;
         foodSpawner.SpawnFood();
-        while (true)
+        while (Alive)
         {
             yield return new WaitForSeconds(0.3f);
             MoveTo(transform.position + GetMovement(), GetRotation());
@@ -70,7 +75,7 @@ public class Head : Body
         {
             return;
         }
-
+        Alive = false;
         Debug.Log("Ow, I ate myself...");
         gameOver.TriggerReset();
 
@@ -78,6 +83,8 @@ public class Head : Body
 
     void Update()
     {
+        if (!Alive)
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = dead;
         if (!canTurn)
             return;
         if (Input.GetKeyDown(KeyCode.A))
