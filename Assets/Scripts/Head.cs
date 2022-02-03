@@ -90,6 +90,11 @@ public class Head : Body
         {
             return;
         }
+        KillSnake();
+    }
+
+    public void KillSnake()
+    {
         Alive = false;
         Debug.Log("Ow, I ate myself...");
         gameOver.TriggerReset();
