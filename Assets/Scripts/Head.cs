@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 public class Head : Body
 {
@@ -8,13 +9,20 @@ public class Head : Body
     public Body bodyPrefab;
     private Score score;
     private GameOver gameOver;
+    
     private bool Alive;
     public Sprite alive;
     public Sprite dead;
+    
     public int StartSpeed = 3;
     public int MinSpeed = 1;
     public int MaxSpeed = 5;
+    
     private float ActualSpeed = 0.3f;
+    private int TextSpeed = 3;
+    
+    public GameObject SpeedTMP;
+    private TMP_Text speedText;
 
     private void Awake()
     {
@@ -23,6 +31,8 @@ public class Head : Body
         gameOver = GameObject.Find("Game Manager").GetComponent<GameOver>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = alive;
         
+        speedText = SpeedTMP.GetComponent<TMP_Text>();
+        speedText.text = $"Speed: {TextSpeed}";
         Alive = true;
     }
 
@@ -83,7 +93,6 @@ public class Head : Body
         Alive = false;
         Debug.Log("Ow, I ate myself...");
         gameOver.TriggerReset();
-
     }
 
     void Update()
@@ -122,8 +131,21 @@ public class Head : Body
             StartSpeed = MaxSpeed;
             ActualSpeed = 0.5f;
         }
-
-        Debug.Log($"Speed = {(StartSpeed)}");
+        SetSpeedText();
+    }
+    
+    private void SetSpeedText()
+    {
+        TextSpeed = StartSpeed switch
+        {
+            1 => 5,
+            2 => 4,
+            4 => 2,
+            5 => 1,
+            _ => 3
+        };
+        
+        speedText.text = $"Speed: {TextSpeed}";
     }
 
     public void Eat(Food food)
